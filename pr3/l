@@ -1,0 +1,22 @@
+data = input("Introdueix la data en format DD/MM/AAAA")
+dia, mes, any = data.split("/")
+
+
+def any_traspas(any):
+    if any % 4 == 0 and (any %100 != 0 or any % 400 == 0):
+        return True
+    else:
+        return False
+
+if True:
+    match mes:
+        case "1"|"3"|"5"|"7"|"8"|"10"|"12": = dia ("31")
+        case "4"|"6"|"9"|"11": = dia ("30")
+        case _: = dia ("29")
+
+
+if False:
+    match mes:
+        case "1" | "3" | "5" | "7" | "8" | "10" | "12": = dia("31")
+        case "4" | "6" | "9" | "11": = dia("30")
+        case _: = dia("28")
