@@ -4,7 +4,7 @@ Trishan Mizhquiri
 Rubén Sánchez
 M03 UF1 A3 PR3
 08/11/2023
-
+Programa que detecta si tres números demanats han estat introduïts en ordre creixent.
 '''
 try:
     primernumero = int(input("Introdueix el primer numero "))
