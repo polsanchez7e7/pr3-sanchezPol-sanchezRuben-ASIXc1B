@@ -7,27 +7,33 @@ M03 UF1 A3 PR3
 
 '''
 
-data = input("Introdueix la data en format DD/MM/AAAA")
-dia, mes, any = data.split("/")
-bisiesto = False
-
-if any % 4 == 0 and (any %100 != 0 or any % 400 == 0):
-     bisiesto = True
+try:
+    data_input = input("Introdueix una data (DD/MM/AAAA): ")
 
 
+    dia, mes, any = map(int, data_input.split('/'))
 
 
+    any_de_traspas = (any % 400 == 0) or ((any % 100 != 0) and (any % 4 == 0))
 
 
-if not bisiesto: #bisiesto == False:
-    if mes == (01 or 03 or 05 or 07 or 08 or 10 or 12):
-        match dia:
-            case (1=> dia <=31): print("Correcte")
-            case _: print("No és un dia correcte")
-    elif mes == (04 or 06 or 09 or 11):
-        match dia:
-            case (1=> dia <=30): print("Correcte")
+    dies_al_mes = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
+    if any_de_traspas:
+        dies_al_mes[2] = 29
+
+
+    data_valida = (1 <= dia <= dies_al_mes[mes]) and (1 <= mes <= 12)
+
+
+    if data_valida:
+        print("La data és vàlida!")
     else:
+        print("La data no és vàlida.")
+except IndexError or ValueError:
+    print("Data o format no vàlids.")
+
 
 
 
